@@ -484,10 +484,10 @@
     <script src="./forms/forms.js"></script>
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
     <script>
-       
-    if (location.protocol == 'http:')
-            location.href = location.href.replace(/^http:/, 'https:')
 
+    if (location.protocol !== 'https:') {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
       </script>
   </body>
 </html>
